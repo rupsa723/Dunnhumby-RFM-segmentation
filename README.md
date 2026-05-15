@@ -20,6 +20,9 @@ A retail grocery chain had 2 years of transaction data and zero customer intelli
 
 ## Dashboard Preview
 
+![Dashboard Preview](assets/dashboard_preview.png)
+*Page 1 — Executive Summary. Add your screenshot as `assets/dashboard_preview.png` in the repo.*
+
 📊 **[Download Interactive Dashboard (.pbix)](https://drive.google.com/file/d/1FVWRXMAGhvVRbKGhjglqDA0D-tWK2nkj/view?usp=sharing)**  
 *Requires Power BI Desktop — free download from Microsoft*
 
@@ -87,6 +90,16 @@ But Champions made **246 trips** over two years. One-time Buyers made 1.
 | Low Value | 0.0% | 0.0% |
 
 Champions are being sent campaigns they don't need. A Champion visits every 2.1 days on average — they shop continuously regardless of whether they received a campaign. The 97.9% "response rate" is measuring shopping frequency, not campaign effectiveness.
+
+**Campaign type breakdown reveals a deeper problem:**
+
+| Campaign Type | Share of All Campaigns | Household Coverage |
+|---------------|----------------------|-------------------|
+| TypeB | 63.3% | 40.9% — lowest coverage |
+| TypeC | 20.0% | 15.9% — near invisible |
+| TypeA | 16.7% | 60.5% — most evenly distributed |
+
+The most common campaign type (TypeB) reaches the fewest households. TypeC — run 6 times over 2 years — reached only 397 of 2,500 households (15.9%). Neither type meaningfully changes coupon redemption behaviour outside Champion and Loyal segments. The campaign mix is heavily concentrated on already-loyal customers regardless of type.
 
 ---
 
