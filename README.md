@@ -18,7 +18,16 @@ A retail grocery chain had 2 years of transaction data and zero customer intelli
 
 ---
 
-## Tech Stack
+## Dashboard Preview
+
+📊 **[Download Interactive Dashboard (.pbix)](https://drive.google.com/file/d/1FVWRXMAGhvVRbKGhjglqDA0D-tWK2nkj/view?usp=sharing)**  
+*Requires Power BI Desktop — free download from Microsoft*
+
+📄 **Dashboard PDF** also available in this repo — shows all pages with key segment selections, no software required.
+
+---
+
+
 
 | Tool | Purpose |
 |------|---------|
@@ -106,7 +115,8 @@ Champions are being sent campaigns they don't need. A Champion visits every 2.1 
 | `RFM_Engine.ipynb` | End-to-end Python pipeline — data loading, EDA, RFM scoring, segmentation, campaign and coupon analysis with verified outputs at each stage |
 | `rfm_segments.csv` | Clean output from Python — 2,500 households with RFM scores, segment labels and demographic columns, ready to load into Power BI |
 | `RFM_Customer_Segmentation.pptx` | 11-slide project presentation covering methodology, 4 key findings, data limitations and recommendations |
-| `RFM_Customer_Segmentation.pbix` | Power BI dashboard — 4 pages with segment slicer, demographic overlay, campaign and coupon analysis |
+| `RFM_Customer_Segmentation.pdf` | Static PDF of all 4 dashboard pages with key segment selections — no software required to view |
+| `RFM_Customer_Segmentation.pbix` | Full interactive Power BI dashboard — [download from Google Drive](https://drive.google.com/file/d/1FVWRXMAGhvVRbKGhjglqDA0D-tWK2nkj/view?usp=sharing) (26MB, requires Power BI Desktop) |
 
 > Dataset not included — download from [Kaggle](https://www.kaggle.com/datasets/frtgnn/dunnhumby-the-complete-journey) (free account required).
 
