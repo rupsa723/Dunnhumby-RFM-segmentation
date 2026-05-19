@@ -18,19 +18,7 @@ A retail grocery chain had 2 years of transaction data and zero customer intelli
 
 ---
 
-## Dashboard Preview
-
-![Dashboard Preview](assets/dashboard_preview.png)
-*Page 1 — Executive Summary. Add your screenshot as `assets/dashboard_preview.png` in the repo.*
-
-📊 **[Download Interactive Dashboard (.pbix)](https://drive.google.com/file/d/1FVWRXMAGhvVRbKGhjglqDA0D-tWK2nkj/view?usp=sharing)**  
-*Requires Power BI Desktop — free download from Microsoft*
-
-📄 **Dashboard PDF** also available in this repo — shows all pages with key segment selections, no software required.
-
----
-
-
+## Tech Stack
 
 | Tool | Purpose |
 |------|---------|
@@ -63,11 +51,44 @@ Recency, Frequency, and Monetary scores per household using `pd.qcut()` quintile
 | Low Value | 62 | 5.45 | 0.4% |
 | New Customers | 30 | 7.33 | 0.2% |
 
-**The Power BI Dashboard (4 pages)**
-- Page 0 — Methodology: how the scoring works
-- Page 1 — Executive Summary: the business picture
-- Page 2 — Segment Deep-Dive: demographics + product behaviour per segment
-- Page 3 — Promotion Intelligence: campaign and coupon analysis
+---
+
+## Dashboard
+
+📊 **[Download Interactive Dashboard (.pbix)](https://drive.google.com/file/d/1FVWRXMAGhvVRbKGhjglqDA0D-tWK2nkj/view?usp=sharing)** — requires Power BI Desktop (free)  
+📄 **Dashboard PDF** also available in this repo — all pages with key segment selections, no software required
+
+---
+
+### Page 0 — How We Score Customers
+
+*RFM methodology, segment rules, scoring distribution and dataset highlights*
+
+![Page 0 — Methodology](assets/page0_methodology.png)
+
+---
+
+### Page 1 — Executive Summary
+
+*Business scale, revenue concentration, churn signals and customer landscape*
+
+![Page 1 — Executive Summary](assets/page1_executive.png)
+
+---
+
+### Page 2 — Segment Deep-Dive *(Champions selected)*
+
+*Demographics, product behaviour, RFM scores and basket analysis per segment — interactive slicer drives all visuals*
+
+![Page 2 — Segment Deep-Dive](assets/page2_champions.png)
+
+---
+
+### Page 3 — Promotion Intelligence
+
+*Campaign targeting efficiency, coupon redemption behaviour and wasted spend analysis*
+
+![Page 3 — Promotion Intelligence](assets/page3_promotion.png)
 
 ---
 
@@ -112,7 +133,7 @@ The most common campaign type (TypeB) reaches the fewest households. TypeC — r
 
 ---
 
-## Data Limitations (Being Honest)
+## Data Limitations
 
 - Demographic coverage: only 801 of 2,500 households have demographic data (32%)
 - Day numbers assumed to start Jan 1 2017 — standard assumption for this dataset
@@ -129,7 +150,7 @@ The most common campaign type (TypeB) reaches the fewest households. TypeC — r
 | `rfm_segments.csv` | Clean output from Python — 2,500 households with RFM scores, segment labels and demographic columns, ready to load into Power BI |
 | `RFM_Customer_Segmentation.pptx` | 11-slide project presentation covering methodology, 4 key findings, data limitations and recommendations |
 | `RFM_Customer_Segmentation.pdf` | Static PDF of all 4 dashboard pages with key segment selections — no software required to view |
-| `RFM_Customer_Segmentation.pbix` | Full interactive Power BI dashboard — [download from Google Drive](https://drive.google.com/file/d/1FVWRXMAGhvVRbKGhjglqDA0D-tWK2nkj/view?usp=sharing) (26MB, requires Power BI Desktop) |
+| [Power BI Dashboard (.pbix)](https://drive.google.com/file/d/1FVWRXMAGhvVRbKGhjglqDA0D-tWK2nkj/view?usp=sharing) | Interactive dashboard — open in Power BI Desktop to explore segment slicers, demographic overlay and campaign analysis |
 
 > Dataset not included — download from [Kaggle](https://www.kaggle.com/datasets/frtgnn/dunnhumby-the-complete-journey) (free account required).
 
