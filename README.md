@@ -1,159 +1,62 @@
 # 🛒 RFM Customer Segmentation
 ### Dunnhumby — The Complete Journey | Python · Power BI
 
-> *"The retailer treats all 2,500 households the same. Who's worth keeping? Who's already gone? And are we wasting money on customers who'd buy anyway?"*
+A grocery retailer had **2 years of transactions and zero customer intelligence**. I built an end-to-end RFM pipeline that segments 2,500 households and exposes where their marketing money is being wasted.
+
+```
+2.6M transactions → cleaned → RFM scored → 8 segments → Power BI dashboard
+```
 
 ---
 
-## The Short Version
+## The Findings That Matter
 
-A retail grocery chain had 2 years of transaction data and zero customer intelligence. I built an end-to-end RFM segmentation pipeline that answers three business questions most retailers never ask properly.
+- 🏆 **Champions are 20% of customers but drive 45% of revenue** — and the business can't name a single one
+- ⚠️ **43% of households show churn signals** (At Risk + Lost)
+- 💸 **Champions absorb 60% of coupon value** — despite buying without any incentive
+- 🎯 **Frequency beats basket size:** Champions spend *less* per trip ($29) than One-time Buyers ($37) — but visit 246× vs 1×
 
-**The uncomfortable findings:**
+---
 
-- 🏆 **Champions are 20.4% of customers but drive 45.4% of revenue** — and the business has no idea who they are
-- ⚠️ **42.6% of households show churn signals** — At Risk and Lost segments combined
-- 💸 **916 households have never received a single campaign** — including Lost customers at 95.5% targeting yet 5.4% redemption
-- 🎟️ **Champions absorb 60% of coupon value** despite buying without incentives
+## Dashboard — Segment Deep-Dive
+
+*Interactive slicer drives demographics, product behaviour, RFM scores and basket analysis per segment.*
+
+![Segment Deep-Dive](assets/page2_champions.png)
+
+📊 **[Interactive Dashboard (.pbix)](https://drive.google.com/file/d/1FVWRXMAGhvVRbKGhjglqDA0D-tWK2nkj/view?usp=sharing)** · 📄 **[Full PDF — all 4 pages](RFM_Customer_Segmentation.pdf)** (no software needed)
+
+---
+
+## How It Works
+
+**RFM Engine (Python)** — Recency, Frequency, Monetary scored per household via `pd.qcut()` quintile binning. All three distributions are heavily right-skewed, so equal-width bins would have dumped 90% of customers into one score. Quintiles force real differentiation.
+
+**8 Segments** — from Champions to Lost, via rule-based logic on combined RFM scores.
+
+| Segment | Count | Revenue % |
+|---------|-------|-----------|
+| Champions | 509 | 45.4% |
+| At Risk | 565 | 18.4% |
+| Loyal | 330 | 17.0% |
+| Potential Loyalists | 306 | 8.5% |
+| Lost | 500 | 8.1% |
+| *+ 3 smaller segments* | | |
+
+---
+
+## The Wasted Spend Story
+
+Champions get targeted **99% of the time** — campaigns they don't need. The "response rate" is just measuring how often they were already going to shop. Meanwhile **At Risk** (18% of revenue) has the worst targeting gap, and the most-used campaign type reaches the *fewest* households.
+
+**Recommendation:** cut Champion spend 30–40%, redirect coupons to Potential Loyalists who actually need the habit nudge, and close the At Risk gap fast.
 
 ---
 
 ## Tech Stack
 
-| Tool | Purpose |
-|------|---------|
-| Python (pandas, numpy) | RFM engine, data cleaning, quintile scoring |
-| Matplotlib | EDA visualisations |
-| Power BI (DAX) | Interactive dashboard, business metrics |
-| Dataset | [Dunnhumby — The Complete Journey](https://www.kaggle.com/datasets/frtgnn/dunnhumby-the-complete-journey) |
+`Python (pandas, numpy)` · `Matplotlib` · `Power BI (DAX)` · [Dunnhumby dataset (Kaggle)](https://www.kaggle.com/datasets/frtgnn/dunnhumby-the-complete-journey)
 
----
+📁 Full pipeline: `RFM_Engine.ipynb` · Output: `rfm_segments.csv` · Deck: `RFM_Customer_Segmentation.pptx`
 
-## What I Built
-
-```
-2,595,732 transactions → cleaned → RFM scored → 8 segments → Power BI dashboard
-```
-
-**The RFM Engine (Python)**  
-Recency, Frequency, and Monetary scores per household using `pd.qcut()` quintile binning — not arbitrary cutoffs. All three distributions are heavily right-skewed, so equal-width bins would have pushed 90% of customers into Score 1. Quintile binning forces genuine differentiation.
-
-**8 Customer Segments**
-
-| Segment | Count | Avg RFM Score | Revenue % |
-|---------|-------|--------------|-----------|
-| Champions | 509 | 13.84 | 45.4% |
-| Loyal | 330 | 11.53 | 17.0% |
-| At Risk | 565 | 8.36 | 18.4% |
-| Potential Loyalists | 306 | 9.81 | 8.5% |
-| Lost | 500 | 4.73 | 8.1% |
-| One-time Buyers | 198 | 5.07 | 1.9% |
-| Low Value | 62 | 5.45 | 0.4% |
-| New Customers | 30 | 7.33 | 0.2% |
-
----
-
-## Dashboard
-
-📊 **[Download Interactive Dashboard (.pbix)](https://drive.google.com/file/d/1FVWRXMAGhvVRbKGhjglqDA0D-tWK2nkj/view?usp=sharing)** — requires Power BI Desktop (free)  
-📄 **Dashboard PDF** also available in this repo — all pages with key segment selections, no software required
-
----
-
-### Page 0 — How We Score Customers
-
-*RFM methodology, segment rules, scoring distribution and dataset highlights*
-
-![Page 0 — Methodology](assets/page0_methodology.png)
-
----
-
-### Page 1 — Executive Summary
-
-*Business scale, revenue concentration, churn signals and customer landscape*
-
-![Page 1 — Executive Summary](assets/page1_executive.png)
-
----
-
-### Page 2 — Segment Deep-Dive *(Champions selected)*
-
-*Demographics, product behaviour, RFM scores and basket analysis per segment — interactive slicer drives all visuals*
-
-![Page 2 — Segment Deep-Dive](assets/page2_champions.png)
-
----
-
-### Page 3 — Promotion Intelligence
-
-*Campaign targeting efficiency, coupon redemption behaviour and wasted spend analysis*
-
-![Page 3 — Promotion Intelligence](assets/page3_promotion.png)
-
----
-
-## Key Insight That Surprised Me
-
-Champions spend **$29.22 per trip** — *less* than One-time Buyers at $36.56.  
-But Champions made **246 trips** over two years. One-time Buyers made 1.  
-**Frequency is the superpower, not basket size.** Most retailers optimise for basket size. Wrong metric.
-
----
-
-## The Wasted Spend Problem
-
-| Segment | Targeting Rate | Coupon Redemption |
-|---------|---------------|------------------|
-| Champions | 99.1% | 42.8% |
-| Loyal | 95.9% | 27.9% |
-| At Risk | 86.7% | 11.0% |
-| Lost | 95.5% | 5.4% |
-| Low Value | 0.0% | 0.0% |
-
-Champions are being sent campaigns they don't need. A Champion visits every 2.1 days on average — they shop continuously regardless of whether they received a campaign. The 97.9% "response rate" is measuring shopping frequency, not campaign effectiveness.
-
-**Campaign type breakdown reveals a deeper problem:**
-
-| Campaign Type | Share of All Campaigns | Household Coverage |
-|---------------|----------------------|-------------------|
-| TypeB | 63.3% | 40.9% — lowest coverage |
-| TypeC | 20.0% | 15.9% — near invisible |
-| TypeA | 16.7% | 60.5% — most evenly distributed |
-
-The most common campaign type (TypeB) reaches the fewest households. TypeC — run 6 times over 2 years — reached only 397 of 2,500 households (15.9%). Neither type meaningfully changes coupon redemption behaviour outside Champion and Loyal segments. The campaign mix is heavily concentrated on already-loyal customers regardless of type.
-
----
-
-## Recommendations
-
-1. **Reduce Champion campaign spend by 30-40%** — replace with loyalty recognition. They buy without incentives.
-2. **Urgently close the At Risk targeting gap** — 565 households, 18.4% revenue, 13.25% never reached. Highest recovery ROI.
-3. **Redesign coupon strategy** — redirect from Champions (who redeem but don't need it) to Potential Loyalists (who need the habit nudge).
-4. **Expand TypeC and TypeA campaign reach** — TypeB dominates at 63% but has the worst household coverage at 40.9%.
-
----
-
-## Data Limitations
-
-- Demographic coverage: only 801 of 2,500 households have demographic data (32%)
-- Day numbers assumed to start Jan 1 2017 — standard assumption for this dataset
-- No campaign control group — response rates cannot be interpreted as causal lift
-- Static RFM: scores reflect full 2-year window, not recent trajectory
-
----
-
-## Project Files
-
-| File | Description |
-|------|-------------|
-| `RFM_Engine.ipynb` | End-to-end Python pipeline — data loading, EDA, RFM scoring, segmentation, campaign and coupon analysis with verified outputs at each stage |
-| `rfm_segments.csv` | Clean output from Python — 2,500 households with RFM scores, segment labels and demographic columns, ready to load into Power BI |
-| `RFM_Customer_Segmentation.pptx` | 11-slide project presentation covering methodology, 4 key findings, data limitations and recommendations |
-| `RFM_Customer_Segmentation.pdf` | Static PDF of all 4 dashboard pages with key segment selections — no software required to view |
-| [Power BI Dashboard (.pbix)](https://drive.google.com/file/d/1FVWRXMAGhvVRbKGhjglqDA0D-tWK2nkj/view?usp=sharing) | Interactive dashboard — open in Power BI Desktop to explore segment slicers, demographic overlay and campaign analysis |
-
-> Dataset not included — download from [Kaggle](https://www.kaggle.com/datasets/frtgnn/dunnhumby-the-complete-journey) (free account required).
-
----
-
-*Built with Python and Power BI. Dataset: Dunnhumby The Complete Journey (Kaggle).*
+<sub>No campaign control group, so response rates are directional not causal. Demographics cover 32% of households.</sub>
