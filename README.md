@@ -106,15 +106,16 @@ Basket size is the wrong metric for customer value, and it's the one most retail
 
 | Segment | Targeting Rate | Share of Coupon Redemptions |
 |---|---|---|
-| Champions | 98.1% | 60.7% |
+| Champions | 98.0% | 60.7% |
 | Loyal | 93.9% | 19.3% |
 | At Risk | 69.5% | 9.3% |
 | Potential Loyalists | 59.9% | 5.7% |
 | Lost | 33.8% | 5.0% |
-| One-time Buyers | 10.1% | 0.04% |
-| Low Value | 0.0% | 0.0% |
+| Low Value | 14.8% | 0.0% |
+| One-time Buyers | 9.5% | 0.04% |
+| New Customers | 6.5% | 0.0% |
 
-Champions receive almost every campaign and take three in five coupons, while shopping continuously whether or not a campaign is running. At Risk, the largest segment and the one still recoverable, is reached 69.5% of the time.
+Champions receive almost every campaign and take three in five coupons, while shopping continuously whether or not a campaign is running. At Risk, the largest segment and the one still recoverable, is reached 69.5% of the time — 173 of those households have never been sent anything.
 
 **The 97.9% campaign response rate is not evidence of anything.** The average campaign window is 47 days and the median household shops every 9 days. Nearly everyone transacts inside any 47-day window regardless of what was sent to them. There is no control group in this dataset, so campaign lift cannot be measured, only asserted.
 
