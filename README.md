@@ -63,7 +63,7 @@ Quintile binning rather than fixed cutoffs, because all three distributions are 
 
 ## Dashboard
 
-📊 **[Interactive dashboard (.pbix)]([https://drive.google.com/file/d/1FVWRXMAGhvVRbKGhjglqDA0D-tWK2nkj/view?usp=sharing](https://drive.google.com/file/d/12aVgtJ9yynjYzScM-Bt5zCM-6JYTtvea/view?usp=drive_link))** — needs Power BI Desktop (free)
+📊 **[Interactive dashboard (.pbix)]([[https://drive.google.com/file/d/1FVWRXMAGhvVRbKGhjglqDA0D-tWK2nkj/view?usp=sharing](https://drive.google.com/file/d/12aVgtJ9yynjYzScM-Bt5zCM-6JYTtvea/view?usp=drive_link)](https://drive.google.com/file/d/12aVgtJ9yynjYzScM-Bt5zCM-6JYTtvea/view?usp=sharing))** — needs Power BI Desktop (free)
 📄 **PDF export** in this repo shows every page with key segment selections, no software needed
 
 ### Page 0 — How We Score Customers
