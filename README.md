@@ -63,7 +63,7 @@ Quintile binning rather than fixed cutoffs, because all three distributions are 
 
 ## Dashboard
 
-📊 **[Interactive dashboard (.pbix)]([[https://drive.google.com/file/d/1FVWRXMAGhvVRbKGhjglqDA0D-tWK2nkj/view?usp=sharing](https://drive.google.com/file/d/12aVgtJ9yynjYzScM-Bt5zCM-6JYTtvea/view?usp=drive_link)](https://drive.google.com/file/d/12aVgtJ9yynjYzScM-Bt5zCM-6JYTtvea/view?usp=sharing))** — needs Power BI Desktop (free)
+📊 **[Interactive dashboard (.pbix)](https://drive.google.com/file/d/12aVgtJ9yynjYzScM-Bt5zCM-6JYTtvea/view?usp=sharing)** — needs Power BI Desktop (free)
 📄 **PDF export** in this repo shows every page with key segment selections, no software needed
 
 ### Page 0 — How We Score Customers
@@ -176,7 +176,7 @@ Segment counts also shift by up to 4 households between the two implementations.
 | `azure/sql/04_rfm_transform.sql` | `NTILE(5)` scoring and segment rules |
 | `RFM_Customer_Segmentation.pptx` | 11-slide walkthrough: methodology, findings, limitations, recommendations |
 | `RFM_dashboard.pdf` | All four dashboard pages as static images |
-| [.pbix on Drive](https://drive.google.com/file/d/1FVWRXMAGhvVRbKGhjglqDA0D-tWK2nkj/view?usp=sharing) | Interactive dashboard, 27 MB so hosted outside the repo |
+| [.pbix on Drive](https://drive.google.com/file/d/12aVgtJ9yynjYzScM-Bt5zCM-6JYTtvea/view?usp=sharing) | Interactive dashboard, 27 MB so hosted outside the repo |
 
 Dataset not included. Download from [Kaggle](https://www.kaggle.com/datasets/frtgnn/dunnhumby-the-complete-journey).
 
